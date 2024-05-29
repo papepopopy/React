@@ -1,5 +1,22 @@
+body {
+  padding: 20;
+}
+
 .App {
   text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.App > section {
+  padding: 20px;
+  background-color: #cecece;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.App .controller {
+  padding: 10px;
 }
 
 .App-logo {

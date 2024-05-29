@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+// import bootstrap from "bootstrap"
+// import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css"
 import './App.css';
+import Controller from "./component/Controller.js"
+import Viewer from "./component/Viewer.js"
+import {useState} from "react"
 
 function App() {
+  const[count, setCount] = useState(10000)
+  const handleSetCount = (value) => {
+    setCount(count+value)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+          <div className="alert alert-light">
+            <h1>Simple Counter</h1>
+          </div>
+          <section>
+            <Viewer count1={count}/>
+          </section>
+          <section>
+            <Controller handleSetCount1={handleSetCount} />
+          </section>
+      </div>
     </div>
   );
 }
